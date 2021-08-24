@@ -35,7 +35,7 @@ int exe_path_dir(vars_t *vars)
 			vars->status = 127;
 			return (1);
 		}
-   	}
+	}
 	return (0);
 }
 
