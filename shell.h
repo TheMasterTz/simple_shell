@@ -46,4 +46,11 @@ char **make_env(char **env);
 char **N_realloc(char **ptr, size_t *size);
 char **_tokenizer(char *buffer, char *delimiter);
 
+void _path(vars_t *vars);
+int exe_path_dir(vars_t *vars);
+int check_for_dir(char *str);
+char *find_path(char **env);
+int path_execute(char *check, vars_t *vars);
+
+
 #endif
