@@ -13,3 +13,23 @@ unsigned int _strlen(char *str)
 		;
 	return (len);
 }
+
+/**
+ * _puts - print function
+ * @str: string
+ * Return: len
+ */
+ssize_t _puts(char *str)
+{
+	ssize_t num = 0, len = 0;
+
+	num = _strlen(str);
+	len = write(STDOUT_FILENO, str, num);
+	if (len != num)
+	{
+		perror("Fatal Error");
+		return (-1);
+	}
+	return (len);
+}
+
