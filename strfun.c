@@ -98,7 +98,8 @@ char *_strdup(const char *strtodup)
 
 	if (strtodup == 0)
 		return (NULL);
-	for (len = 0; strtodup[len]; len++);
+	for (len = 0; strtodup[len]; len++)
+		;
 
 	copy = malloc((len + 1) * sizeof(char));
 
