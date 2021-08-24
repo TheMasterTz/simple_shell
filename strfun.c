@@ -87,6 +87,9 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
+ * _strdup - duplicate string
+ * @strtodup: string
+ * Return: copy
  */
 char *_strdup(const char *strtodup)
 {
