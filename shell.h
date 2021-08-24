@@ -43,4 +43,7 @@ void get_env(vars_t *vars);
 void free_env(char **env);
 char **make_env(char **env);
 
+char **N_realloc(char **ptr, size_t *size);
+char **_tokenizer(char *buffer, char *delimiter);
+
 #endif
