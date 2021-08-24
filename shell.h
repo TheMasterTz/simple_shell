@@ -40,4 +40,7 @@ void (*get_comd_fun(vars_t *vars)) (vars_t *vars);
 void get_exit(vars_t *vars);
 void get_env(vars_t *vars);
 
+void free_env(char **env);
+char **make_env(char **env);
+
 #endif
