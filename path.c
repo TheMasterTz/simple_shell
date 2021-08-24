@@ -12,6 +12,33 @@ int check_for_dir(char *str)
 	return (0);
 }
 
+int exe_path_dir(vars_t *vars)
+{
+	pid_t pid;
+	struct stat buff;
+
+	if (stat(vars->av[0], &buff) == 0)
+	{
+		if (access(vars->av[0], X_OK) == 0)
+		{
+			pid = fork();
+			if (pid == 0)
+				execve(vars->av[0], vars->av, vars->env);
+			else
+			{
+				wait(&vars->status);
+				return (0);
+			}
+		}
+		else
+		{
+			vars->status = 127;
+			return (1);
+		}
+   	}
+	return (0);
+}
+
 void _path(vars_t *vars)
 {
 	unsigned int i = 0, iter;
