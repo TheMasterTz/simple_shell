@@ -19,7 +19,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 	if (!isatty(STDIN_FILENO))
 		pipeline = 1;
 	if (pipeline == 0)
-    	_puts(prompt);
+		_puts(prompt);
 	while (getline(&(vars.buffer), &len_buffer, stdin) != -1)
 	{
 		vars.count++;
@@ -35,7 +35,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		free(vars.buffer);
 		free(vars.commands);
 		if (pipeline == 0)
-    		_puts(prompt);
+			_puts(prompt);
 		vars.buffer = NULL;
 	}
 
