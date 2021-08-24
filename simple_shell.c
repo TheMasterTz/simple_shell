@@ -1,5 +1,12 @@
 #include "shell.h"
-
+/**
+ * main - main function for the shell
+ * @argc: number of arguments passed to main
+ * @argv: array of arguments passed to main
+ * @environment: array of environment variables
+ *
+ * Return: 0 or exit status, or ?
+ */
 int main(int argc __attribute__((unused)), char **argv, char **environment)
 {
 	char *prompt = "$ ";
