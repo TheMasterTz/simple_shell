@@ -10,7 +10,16 @@
 #include <sys/wait.h>
 #include <limits.h>
 #include <signal.h>
-
+/**
+ * struct variables - stores the reserved memory of the variables
+ * @av: command line arguments
+ * @buffer: buffer of command
+ * @env: environment variables
+ * @count: count of commands entered
+ * @argv: arguments at opening of shell
+ * @status: exit status
+ * @commands: commands to execute
+ */
 typedef struct variables
 {
 	char **av;
@@ -21,7 +30,11 @@ typedef struct variables
 	char **commands;
 	size_t count;
 } vars_t;
-
+/**
+ * struct builtins - struct for the builtin functions
+ * @name: name of builtin command
+ * @f: function for corresponding builtin
+ */
 typedef struct builtins
 {
 	char *name;
@@ -51,6 +64,5 @@ int exe_path_dir(vars_t *vars);
 int check_for_dir(char *str);
 char *find_path(char **env);
 int path_execute(char *check, vars_t *vars);
-
 
 #endif
