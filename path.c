@@ -55,6 +55,29 @@ char *find_path(char **env)
 	return (env[iter1]);
 }
 
+int path_execute(char *check, vars_t *vars)
+{
+	pid_t pid;
+
+	if (access(check, X_OK) == 0)
+	{
+		pid = fork();
+		if (pid == 0)
+			execve(check, vars->av, vars->env);
+		else
+		{
+			wait(&vars->status);
+			return (0);
+		}
+	}
+	else
+	{
+		vars->status = 127;
+		return (1);
+	}
+	return (0);
+}
+
 void _path(vars_t *vars)
 {
 	unsigned int i = 0, iter;
