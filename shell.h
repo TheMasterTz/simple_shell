@@ -35,4 +35,9 @@ char *_strcat(char *strc1, char *strc2);
 int _strcmp(char * s1, char * s2);
 void _strcpy(char *dest, char *src);
 char *_strdup(const char *strtodup);
+
+void (*get_comd_fun(vars_t *vars)) (vars_t *vars);
+void get_exit(vars_t *vars);
+void get_env(vars_t *vars);
+
 #endif
