@@ -69,10 +69,15 @@ char *_strcat(char *strc1, char *strc2)
 }
 
 /**
+ * _strcmp - compares the string
+ * @s1: string
+ * @s2: string
+ * Return: 0
  */
 int _strcmp(char *s1, char *s2)
 {
 	int i;
+
 	for (i = 0; s1[i] == s2[i]; i++)
 	{
 		if (s1[i] == '\0')
@@ -81,6 +86,8 @@ int _strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
+/**
+ */
 char *_strdup(const char *strtodup)
 {
 	char *copy;
@@ -88,7 +95,6 @@ char *_strdup(const char *strtodup)
 
 	if (strtodup == 0)
 		return (NULL);
-
 	for (len = 0; strtodup[len]; len++);
 
 	copy = malloc((len + 1) * sizeof(char));
