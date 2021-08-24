@@ -67,3 +67,34 @@ char *_strcat(char *strc1, char *strc2)
 	NewString[len1 + len2 + 1] = '\0';
 	return (NewString);
 }
+
+/**
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i;
+	for (i = 0; s1[i] == s2[i]; i++)
+	{
+		if (s1[i] == '\0')
+			return (0);
+	}
+	return (s1[i] - s2[i]);
+}
+
+char *_strdup(const char *strtodup)
+{
+	char *copy;
+	int len, i;
+
+	if (strtodup == 0)
+		return (NULL);
+
+	for (len = 0; strtodup[len]; len++);
+
+	copy = malloc((len + 1) * sizeof(char));
+
+	for (i = 0; i <= len; i++)
+		copy[i] = strtodup[i];
+
+	return (copy);
+}
