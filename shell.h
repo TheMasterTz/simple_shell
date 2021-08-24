@@ -65,4 +65,6 @@ int check_for_dir(char *str);
 char *find_path(char **env);
 int path_execute(char *check, vars_t *vars);
 
+void print_error(vars_t *vars, char *caract);
+
 #endif

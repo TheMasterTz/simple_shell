@@ -132,6 +132,12 @@ void _path(vars_t *vars)
 			}
 			free(path_dup);
 		}
+		if (path == NULL || path_token[iter] == NULL)
+		{
+			print_error(vars, ": command not found\n");
+			vars->status = 127;
+		}
+		free(path_token);
 	}
 	if (i == 1)
 		get_exit(vars);
