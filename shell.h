@@ -32,4 +32,7 @@ unsigned int _strlen(char *str);
 ssize_t _puts(char *str);
 char *_strcat(char *strc1, char *strc2);
 
+int _strcmp(char * s1, char * s2);
+void _strcpy(char *dest, char *src);
+char *_strdup(const char *strtodup);
 #endif
