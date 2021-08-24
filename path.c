@@ -39,6 +39,22 @@ int exe_path_dir(vars_t *vars)
 	return (0);
 }
 
+char *find_path(char **env)
+{
+	char *path = "PATH=";
+	unsigned int iter1, iter2;
+
+	for (iter1 = 0; env[iter1]; iter1++)
+	{
+		for (iter2 = 0; iter2 < 5; iter2++)
+			if (path[iter2] != env[iter1][iter2])
+				break;
+		if (iter2 == 5)
+			break;
+	}
+	return (env[iter1]);
+}
+
 void _path(vars_t *vars)
 {
 	unsigned int i = 0, iter;
