@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * check_for_dir - checks if the command is a part of a path
+ * @str: command
+ *
+ * Return: 1 on success, 0 on failure
+ */
 int check_for_dir(char *str)
 {
 	unsigned int i;
@@ -11,7 +16,12 @@ int check_for_dir(char *str)
 	}
 	return (0);
 }
-
+/**
+ * exe_path_dir - executes the command in the current working directory
+ * @vars: pointer to struct of variables
+ *
+ * Return: 0 on success, 1 on failure
+ */
 int exe_path_dir(vars_t *vars)
 {
 	pid_t pid;
@@ -38,7 +48,12 @@ int exe_path_dir(vars_t *vars)
 	}
 	return (0);
 }
-
+/**
+ * find_path - finds the PATH variable
+ * @env: array of environment variables
+ *
+ * Return: pointer to the node that contains the PATH, or NULL on failure
+ */
 char *find_path(char **env)
 {
 	char *path = "PATH=";
@@ -54,7 +69,13 @@ char *find_path(char **env)
 	}
 	return (env[iter1]);
 }
-
+/**
+ * path_execute - executes a command in the path
+ * @check: full path to the command
+ * @vars: pointer to struct of variables
+ *
+ * Return: 0 on succcess, 1 on failure
+ */
 int path_execute(char *check, vars_t *vars)
 {
 	pid_t pid;
@@ -77,7 +98,12 @@ int path_execute(char *check, vars_t *vars)
 	}
 	return (0);
 }
-
+/**
+ * _path - checks if the command is in the PATH
+ * @vars: variables
+ *
+ * Return: void
+ */
 void _path(vars_t *vars)
 {
 	unsigned int i = 0, iter;
