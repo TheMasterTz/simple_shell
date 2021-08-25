@@ -66,6 +66,7 @@ char *_strcat(char *strc1, char *strc2)
 		NewString[iter1 + 1 + iter2] = strc2[iter2];
 	NewString[len1 + len2 + 1] = '\0';
 	return (NewString);
+	free(NewString);
 }
 
 /**
@@ -107,4 +108,5 @@ char *_strdup(const char *strtodup)
 		copy[i] = strtodup[i];
 
 	return (copy);
+	free(copy);
 }

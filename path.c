@@ -129,6 +129,7 @@ void _path(vars_t *vars)
 					free(check_path);
 					break;
 				}
+				free(check_path);
 			}
 			free(path_dup);
 		}

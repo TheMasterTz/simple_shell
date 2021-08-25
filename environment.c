@@ -37,4 +37,5 @@ char **make_env(char **env)
 		newenv[i] = _strdup(env[i]);
 	newenv[i] = NULL;
 	return (newenv);
+	free(newenv);
 }
