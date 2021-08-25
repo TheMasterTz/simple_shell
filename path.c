@@ -132,6 +132,11 @@ void _path(vars_t *vars)
 				free(check_path);
 			}
 			free(path_dup);
+			if (path_token == NULL)
+			{
+				vars->status = 127;
+				get_exit(vars);
+			}
 		}
 		if (path == NULL || path_token[iter] == NULL)
 		{
