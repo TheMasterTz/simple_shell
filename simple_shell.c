@@ -22,7 +22,6 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		_puts(prompt);
 	while (getline(&(vars.buffer), &len_buffer, stdin) != -1)
 	{
-		vars.count++;
 		vars.commands = _tokenizer(vars.buffer, ";");
 		for (iter = 0; vars.commands && vars.commands[iter] != NULL; iter++)
 		{

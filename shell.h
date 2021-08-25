@@ -28,7 +28,6 @@ typedef struct variables
 	char **argv;
 	int status;
 	char **commands;
-	size_t count;
 } vars_t;
 /**
  * struct builtins - struct for the builtin functions
