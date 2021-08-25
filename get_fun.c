@@ -41,3 +41,17 @@ void get_env(vars_t *vars)
 	}
 	vars->status = 0;
 }
+
+/**
+ * get_exit - function exit
+ * @vars: struct
+ * Return: 0
+ */
+void get_exit(vars_t *vars)
+{
+	free(vars->buffer);
+	free(vars->av);
+	free(vars->commands);
+	free_env(vars->env);
+	exit(vars->status);
+}
