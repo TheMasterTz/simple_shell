@@ -26,6 +26,9 @@ void (*get_comd_fun(vars_t *vars)) (vars_t *vars)
 }
 
 /**
+ * get_env - environment variables
+ * @vars: struct
+ * Return: env
  */
 void get_env(vars_t *vars)
 {
