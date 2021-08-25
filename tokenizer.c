@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * tokenizer - tokenizes and a delimiter
+ * @buffer: buffer to tokenizer
+ * @delimiter: delimiter to tokenizer
+ */
 char **_tokenizer(char *buffer, char *delimiter)
 {
 	char **tokens = NULL;
@@ -29,6 +34,9 @@ char **_tokenizer(char *buffer, char *delimiter)
 	}
 	return (tokens);
 }
+
+/**
+ */
 char **N_realloc(char **ptr, size_t *size)
 {
 	char **new;
