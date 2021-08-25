@@ -25,3 +25,16 @@ void (*get_comd_fun(vars_t *vars)) (vars_t *vars)
 	return (comds[iter].f);
 }
 
+/**
+ */
+void get_env(vars_t *vars)
+{
+	unsigned int iter;
+
+	for (iter = 0; vars->env[iter]; iter++)
+	{
+		_puts(vars->env[iter]);
+		_puts("\n");
+	}
+	vars->status = 0;
+}
