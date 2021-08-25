@@ -1,9 +1,10 @@
 #include "shell.h"
 
 /**
- * tokenizer - tokenizes and a delimiter
+ * _tokenizer - tokenizes and a delimiter
  * @buffer: buffer to tokenizer
  * @delimiter: delimiter to tokenizer
+ * Return: tokens
  */
 char **_tokenizer(char *buffer, char *delimiter)
 {
@@ -26,7 +27,7 @@ char **_tokenizer(char *buffer, char *delimiter)
 			if (tokens == NULL)
 			{
 				perror("Fatal Error");
-				return(NULL);
+				return (NULL);
 			}
 			mcount += 10;
 		}
@@ -36,6 +37,10 @@ char **_tokenizer(char *buffer, char *delimiter)
 }
 
 /**
+ * N_realloc - Reallocates the given area of memory
+ * @ptr: pointer
+ * @size: size
+ * Return: new
  */
 char **N_realloc(char **ptr, size_t *size)
 {
