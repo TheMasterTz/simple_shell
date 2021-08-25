@@ -29,4 +29,19 @@ char **_tokenizer(char *buffer, char *delimiter)
 	}
 	return (tokens);
 }
+char **N_realloc(char **ptr, size_t *size)
+{
+	char **new;
+	size_t iter;
 
+	new = malloc(sizeof(char *) * ((*size) + 10));
+	if (new == NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	for (iter = 0; iter < (*size); iter++)
+		new[iter] = ptr[iter];
+	free(ptr);
+	return (new);
+}
