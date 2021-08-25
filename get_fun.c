@@ -53,5 +53,5 @@ void get_exit(vars_t *vars)
 	free(vars->av);
 	free(vars->commands);
 	free_env(vars->env);
-	exit(vars->status);
+	exit(0);
 }
