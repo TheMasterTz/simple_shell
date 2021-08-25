@@ -37,6 +37,8 @@ simple_shell is a command line interpreter, or shell, in the tradition of the fi
 * [tokenizer.c](tokenizer.c) - tokenizing function:
 	* `_tokenizer` - creates an array of tokens from a buffer with a specified delimiter.
 	 * `N_realloc` - a custom realloc function for arrays of pointers.
+## Flowchart (main):
+![enter image description here](https://lucid.app/publicSegments/view/e3f08d12-30b4-4443-9f6c-a7f75bbeeb25/image.png)
 ## Requirements:
 
 simple_shell is designed to run in the  `Ubuntu 14.04 LTS`  linux environment and to be compiled using the GNU compiler collection v.  `gcc 4.8.4`  with flags`-Wall, -Werror, -Wextra, and -pedantic.`
