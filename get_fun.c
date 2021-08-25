@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * get_comd_fun - compares the functions
+ * @vars: struct
+ * Return: 0
+ */
 void (*get_comd_fun(vars_t *vars)) (vars_t *vars)
 {
 	unsigned int iter;
