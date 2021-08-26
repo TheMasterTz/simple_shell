@@ -40,6 +40,9 @@ typedef struct builtins
 	void (*f)(vars_t *);
 } builtins_t;
 
+/* global variable for ^C handling */
+unsigned int point;
+
 unsigned int _strlen(char *str);
 ssize_t _puts(char *str);
 char *_strcat(char *strc1, char *strc2);

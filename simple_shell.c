@@ -1,7 +1,5 @@
 #include "shell.h"
 
-/* global variable for ^C handling */
-unsigned int point;
 /**
  * ctrlC - handles ^C signal interupt
  * @p: unused variable (required for signal function prototype)
