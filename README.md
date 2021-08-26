@@ -8,7 +8,7 @@ simple_shell is a command line interpreter, or shell, in the tradition of the fi
 * [AUTHORS](AUTHORS) - List of contributors to this repository.
 * [man_1_simple_shell](man_1_simple_shell) - Manual page for the simple_shell.
 * [shell.h](shell.h) - program header file.
-* [get_funs.c](get_funs.c) - major builtin functions
+* [get_fun.c](get_fun.c) - major builtin functions
 	* `get_comd_fun` - checks to see if the user's command matches a builtin.
 	* `get_exit` - exits the shell with the option of a specified status.
 	* `get_env` - prints the shell's environment variables to the standard output.
