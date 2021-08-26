@@ -34,7 +34,6 @@ char **_tokenizer(char *buffer, char *delimiter)
 		buffer = NULL;
 	}
 	return (tokens);
-	free(tokens);
 }
 
 /**
@@ -58,5 +57,4 @@ char **N_realloc(char **ptr, size_t *size)
 		new[iter] = ptr[iter];
 	free(ptr);
 	return (new);
-	free(new);
 }
