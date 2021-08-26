@@ -6,7 +6,7 @@ simple_shell is a command line interpreter, or shell, in the tradition of the fi
 ## File Structure
 
 * [AUTHORS](AUTHORS) - List of contributors to this repository.
-* [man_page_shell](man_page_shell) - Manual page for the simple_shell.
+* [man_1_simple_shell](man_1_simple_shell) - Manual page for the simple_shell.
 * [shell.h](shell.h) - program header file.
 * [get_funs.c](get_funs.c) - major builtin functions
 	* `get_comd_fun` - checks to see if the user's command matches a builtin.
