@@ -27,7 +27,7 @@ simple_shell is a command line interpreter, or shell, in the tradition of the fi
 * [simple_shell.c](simple_shell.c) - essential functions to the shell:
 	* `main` - the main function of the program.
 	
-* [strfunc.c](strfunc.c) - functions related to string manipulation:
+* [strfun.c](strfun.c) - functions related to string manipulation:
 	* `_puts` - writes a string to standart output.
 	* `_strdup` - duplicates a string.
 	* `_strcmp` - compares two strings.
