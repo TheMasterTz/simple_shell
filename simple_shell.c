@@ -7,6 +7,7 @@
  *
  * Return: 0 or exit status, or ?
  */
+
 int main(int argc __attribute__((unused)), char **argv, char **environment)
 {
 	char *prompt = "$ ";
