@@ -1,4 +1,21 @@
 #include "shell.h"
+
+/* global variable for ^C handling */
+unsigned int point;
+/**
+ * ctrlC - handles ^C signal interupt
+ * @p: unused variable (required for signal function prototype)
+ *
+ * Return: void
+ */
+static void ctrlC(int p)
+{
+	(void) p;
+	if (point == 0)
+		_puts("\n$ ");
+	else
+		_puts("\n");
+}
 /**
  * main - main function for the shell
  * @argc: number of arguments passed to main
@@ -16,12 +33,15 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 
 	vars.argv = argv;
 	vars.env = make_env(environment);
+	signal(SIGINT, ctrlC);
 	if (!isatty(STDIN_FILENO))
 		pipeline = 1;
 	if (pipeline == 0)
 		_puts(prompt);
+	point = 0;
 	while (getline(&(vars.buffer), &len_buffer, stdin) != -1)
 	{
+		point = 1;
 		vars.commands = _tokenizer(vars.buffer, ";");
 		for (iter = 0; vars.commands && vars.commands[iter] != NULL; iter++)
 		{
@@ -33,6 +53,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		}
 		free(vars.buffer);
 		free(vars.commands);
+		point = 0;
 		if (pipeline == 0)
 			_puts(prompt);
 		vars.buffer = NULL;
